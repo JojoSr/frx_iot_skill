@@ -19,16 +19,16 @@ class FrxIot(MycroftSkill):
 
     @intent_file_handler('light.on.intent')
     def handle_lights_on(self, message):
-        self.send_command(self, 'LIGHT-88F3-A567B67D453C', 'white_light_1', '1')
-        self.send_command(self, 'LIGHT-88F3-A567B67D453C', 'red_light_1', '1')
-        self.send_command(self, 'LIGHT-88F3-A567B67D453C', 'blue_light_1', '1')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'white_light_1', '1')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'red_light_1', '1')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'blue_light_1', '1')
         
         
     @intent_file_handler('light.off.intent')
     def handle_lights_off(self, message):
-        self.send_command(self, 'LIGHT-88F3-A567B67D453C', 'white_light_1', '0')
-        self.send_command(self, 'LIGHT-88F3-A567B67D453C', 'red_light_1', '0')
-        self.send_command(self, 'LIGHT-88F3-A567B67D453C', 'blue_light_1', '0')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'white_light_1', '0')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'red_light_1', '0')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'blue_light_1', '0')
         
         
 
