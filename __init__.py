@@ -13,7 +13,7 @@ class FrxIot(MycroftSkill):
         resp = requests.post('http://10.0.3.100/api/Command', json=cmd)
         if resp.status_code != 201:
             self.speak(resp.status_code)
-            self.speak_dialog('err_'+unit)
+            self.speak_dialog('err_'+command)
         else: 
             self.speak_dialog('iot.frx')        
         
