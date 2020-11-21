@@ -23,14 +23,35 @@ class FrxIot(MycroftSkill):
         self.send_command('LIGHT-88F3-A567B67D453C', 'white_light_1', '1')
         self.send_command('LIGHT-88F3-A567B67D453C', 'red_light_1', '1')
         self.send_command('LIGHT-88F3-A567B67D453C', 'blue_light_1', '1')
-        self.speak_dialog('iot.frx')        
-        
+        self.speak_dialog('iot.frx')
         
     @intent_file_handler('light.off.intent')
     def handle_lights_off(self, message):
         self.send_command('LIGHT-88F3-A567B67D453C', 'white_light_1', '0')
         self.send_command('LIGHT-88F3-A567B67D453C', 'red_light_1', '0')
         self.send_command('LIGHT-88F3-A567B67D453C', 'blue_light_1', '0')
+        self.speak_dialog('iot.frx')
+        
+    @intent_file_handler('red_light.intent')
+    def handle_lights_red(self, message):   
+        self.send_command('LIGHT-88F3-A567B67D453C', 'white_light_1', '0')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'red_light_1', '1')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'blue_light_1', '0')
+        self.speak_dialog('iot.frx')
+        
+    @intent_file_handler('blue_light.intent')
+    def handle_lights_blue(self, message):   
+        self.send_command('LIGHT-88F3-A567B67D453C', 'white_light_1', '0')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'red_light_1', '0')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'blue_light_1', '1')
+        self.speak_dialog('iot.frx')
+        
+    @intent_file_handler('white_lights.intent')
+    def handle_lights_white(self, message):   
+        self.send_command('LIGHT-88F3-A567B67D453C', 'white_light_1', '1')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'red_light_1', '0')
+        self.send_command('LIGHT-88F3-A567B67D453C', 'blue_light_1', '0')
+        self.speak_dialog('iot.frx')
         
         
 
