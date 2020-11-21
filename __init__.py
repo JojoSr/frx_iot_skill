@@ -16,8 +16,6 @@ class FrxIot(MycroftSkill):
         self.log.info(resp.text)
         if resp.status_code != 200:
             self.speak_dialog('err_'+command)
-        else: 
-            self.speak_dialog('iot.frx')        
         
 
     @intent_file_handler('light.on.intent')
@@ -25,6 +23,7 @@ class FrxIot(MycroftSkill):
         self.send_command('LIGHT-88F3-A567B67D453C', 'white_light_1', '1')
         self.send_command('LIGHT-88F3-A567B67D453C', 'red_light_1', '1')
         self.send_command('LIGHT-88F3-A567B67D453C', 'blue_light_1', '1')
+        self.speak_dialog('iot.frx')        
         
         
     @intent_file_handler('light.off.intent')
