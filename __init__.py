@@ -11,8 +11,10 @@ class FrxIot(MycroftSkill):
     def send_command(self, unit, command, value):
         cmd = { "id":unit, "command":command, "value":value}
         resp = requests.post('http://10.0.3.100/api/Command', json=cmd)
-        if resp.status_code != 201:
-            self.speak(resp.status_code)
+        self.log.info('Requesting Command For Url ....')
+        self.log.info(resp.status_code)
+        self.log.info(resp.text)
+        if resp.status_code != 200:
             self.speak_dialog('err_'+command)
         else: 
             self.speak_dialog('iot.frx')        
